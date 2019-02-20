@@ -1,2 +1,3 @@
 studentA='I\'m StudentA.'
-print(studentA)
+studentB=input('Enter your name:\n')
+print(studentA,studentB)
