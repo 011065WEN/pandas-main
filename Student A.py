@@ -1,60 +1,70 @@
-mathscore=[34,2,18,95,47,37,65]
-ls=['a','b','c']
-print(mathscore+ls)
+#machScores=[60,80,30,50,53,67,89,51,20]
+#l=len(machScores)
+#for i in range (0,l):
+ #   print(i,machScores[i]*10)
 
-ls=[[1,4],[5,9]]
-print(ls[1][1])
-print(ls[0])
+#for item in machScores:
+#    print(item)
 
-print(sorted(mathscore))
+#for each
+#for item in machScores:
+#    item=item*10
+#    print(item)
 
-grade=[[5,14,7],[23,36,28],[88,80,92]]
-print(grade[2])
-print(sum(grade[0])/len(grade[0]))
-print(sum(grade[1])/len(grade[2]))
-print(sum(grade[2])/len(grade[2]))
+#list comprehension\
+##[item*10 for l in machScores]
 
-#----Tuple
-tuple3=('Lisa',23,'Female')
-name,age,sex=tuple3
-print(name,age,sex)
-print(tuple3[0])
-tuple4=('a','b')
-print(tuple3+tuple4)
+#family={'dad':'Homer','mom':'Lisa'}
+#for i,j in family.items():
+#    print(i,j)
 
-gradetuple=((5,14,7),(23,36,28),(88,80,92))
-print(gradetuple)
-mathtuple=gradetuple[2]
-C=gradetuple[0]
-E=gradetuple[1]
-Cagv=sum(C)/len(C)
-Eagv=sum(E)/len(E)
-Magv=sum(mathtuple)/len(mathtuple)
-print('Chinese Agv:',Cagv)
-print('English Agv:',Eagv)
-print('Math Agv:',Magv)
-print(gradetuple+(94,90,96))
-#---Dictionary
-family={}
-family['dad']='Homer'
-print(family)
-family['dad']='Andy'
-print(family)
+#x=(1,2,3)
+#y=(4,5,6)
+#z=(7,8,9)
+#for x,y,z in zip(x,y,z):
+#   print(x,y,z)
 
-print(family.get('mom'))
-family.update({'mom':'Lisa','son':'John'})
-print(family)
+##tuple1=('a','b')
+##for a,b in family.items():
+##    print(a,b)
 
-GradeDict={'Cinnese':[5,14,7],'English':[23,36,28],'Math':[88,80,92]}
-Mathscore=GradeDict['Math']
-print(Mathscore)
+#machScores=[60,80,30,50,53,67,89,51,20]
+#l=len(machScores)
+#for i in range (0,l):
+#   print(i,machScores[i]*10)
+#ls=list(enumerate(machScores))
+#print(ls)
+#for index,item in enumerate(machScores):
+#    print(index,item)
+
+#當條件滿⾜足，則迴圈⼀一直執⾏行行
+#count=0
+#while count<10:
+#    print(count)
+#    count+=1
+
+#當條件不滿⾜足，則執⾏行行else
+#count=0
+#while count<10:
+#    print(count)
+##else:
+#    print('count>=10')
+
+#for i in range(0,20):
+#    if i % 2 == 1:
+#        print(i)
+
+#break
+##mathScores=[60,80,30,50,53,67,89,51,20]
+##for item in mathScores:
+##    if item > 88:
+##        break
+##       print(item)
 
 
-#----Set
-
-
-AllStudent={'John','Eva','Jill','Eric','Andy','Albert','Polina','Kristin','Angela'}
-DanceClub={'Eric','Andy','Albert','Polina','Kristin'}
-GuitarClub={'John','Eva','Jill','Eric','Andy'}
-print(AllStudent)
-
+#continue
+mathScores=[60,80,30,50,53,67,89,51,20]
+for i in mathScores:
+    if i >88:
+        continue
+    print(i)
