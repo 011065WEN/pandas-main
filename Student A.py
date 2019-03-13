@@ -1,76 +1,108 @@
-from MyMath import AddOperation as AddOpera
-#函式基本語法 def定義
-#def function_name(parameters):
-    #do something
-#    return something
-#範例
-# def add_x_and_y(x,y=4):
-#     """
-#     add x and y and return
-#     :param x:
-#     :param y:
-#     :return:
-#     """
-#     sum0_num=x+y
-#     return sum0_num
-#定義xy位置 (不打東西可以先打pass，不然會出現紅色毛毛蟲~)
-a = 10
-b = 7
-sum0=AddOpera.add_x_and_y(a,b)
-print(sum0)
-#在上面預設y=4,就算沒有定義y也會做計算
-c=AddOpera.add_x_and_y(a)
-print(c)
-#變動數量的參數個數
+# #f=open('檔案名稱','檔案開始模式')
+# file_path='123.txt'  #檔案路徑
+# f=open(file_path,'r')  #開啟檔案
+# fr=f.read()     #讀取檔案內容
+# print(fr)       #印出內容
+# f.close()               #關閉檔案
+#
+# #寫入檔案
+# file_path='123.txt'  #檔案路徑
+# f=open(file_path,'w')
+# data=' GO GO GO' #資料內容
+# f.write(data)
+# f.close()
+#
+# #with代替f.close()
+# file_path='123.txt'
+# with open(file_path,'r')as f: #讀取
+#     fr=f.read()
+#     print(fr)
+
+# import csv
+# file_path='df.csv'
+# with open(file_path,'r',encoding='utf-8') as csvfile: #Mac電腦編碼，問題，要轉Windows需加encoding='utf-8'
+#     rows=csv.reader(csvfile)
+#     for row in rows:
+#         print(row)
+
+#import csv
+# file_path='df.csv'
+# with open(file_path,'r',encoding='utf-8') as csvfile: #Mac電腦編碼，問題，要轉Windows需加encoding='utf-8'
+#     rows=csv.DictReader(csvfile)  #使用dictation
+#     for row in rows:
+#         print(row)
+
+#
+# import csv
+# members = [{'name': 'Kelsey'},
+#         {'name': 'Van'},
+#         {'name': 'WEN'}]
+# with open('score.csv', 'w', newline='')as csvfile:
+#     writer = csv.writer(csvfile)
+#     writer.writerow(['name', 'score'])  #writerow一次寫一列
+#     for item in members:
+#         writer.writerow([item['name']])
+
+# #找出某一段錯誤並印出錯誤原因
+# file_path='abc.txt'
+# data=''
+# try:
+#     with open(file_path,'r')as f:
+#         fr=f.read()
+#         print(fr)
+#         data=fr    #將讀入內容存入data
+# except Exception as e:
+#     print(e)
+# print(data)
+
+# #加入traceback追蹤是哪一行錯誤，並印出原因
+import traceback
+# file_path='abc.txt'
+# data=''
+# try:
+#     with open(file_path,'r')as f:
+#         fr=f.read()
+#         print(fr)
+#         data=fr    #將讀入內容存入data
+# except:
+#     traceback.print_exc()
+# print(data)
+
+import json
+# members = [{'name': 'Kelsey'},
+#         {'name': 'Van'},
+#         {'name': 'WEN'}]
+# obj=json.dumps(members)
+# print(type(members))
+# print(type(members[0]))
+# print(obj)     #轉成json(用雙引號包住)
+# print(type(obj))
+#
+# d=json.loads(obj)  #再轉回來(原本是用單引號)
+# print(d)
 
 
-def add_x_and_multi_y(x,*y): #第二個數字後都會被歸納為y
-    """
-    add x and multi y and return sum
-    :param x: eg. 8
-    :param y: eg. (6,9,4)
-    :return:
-    """
-    #print(y) #(45,27,39,81)
-    sum_num=x+sum(y)
-    return sum_num #return 就是教函式吐東西出來
-z=6
-p=45
-c=27
-v=39
-n=81
-sum1=add_x_and_multi_y(z,p,c,v,b)
-print(sum1)
+# members = [{'name': '林'},
+#         {'name': '雯'},
+#         {'name': '儀'}]
+# obj=json.dumps(members, ensure_ascii=False, indent=2) #顯示中文&一行一行顯示
+# print(type(members))
+# print(type(members[0]))
+# print(obj)     #轉成json(用雙引號包住)
+# print(type(obj))
+#
+# d=json.loads(obj)  #再轉回來(原本是用單引號)
+# print(d)
 
-sum2=add_x_and_multi_y(z,p,c,v,n,14,23)
-print(sum2)
+from datetime import datetime
+datestr='2019-03-12 20:00:00'
+dt=datetime.strptime(datestr, '%Y-%m-%d %H:%M:%S') #可以賞忘找json時間轉字串
+print(dt)
+print(type(dt))
 
-def add_x_and_y_return_multi_value(x,y):
-    sum_num=x+y
-    avg=sum_num/2
-    return sum_num,avg
-a=4
-b=27
-sum3,avg1=add_x_and_y_return_multi_value(a,b)
-print(sum3)
-print(avg1)
-
-#匿名函式
-#function_name=lambda para1,para2:do_something
-
-#filter(判斷函式，要過濾的變數)
-ls=[3,56,74,35,65,34,6,234,51]
-def is_odd(x):
-    return x % 2 == 1 #判斷除2取餘數是否等於1
-result=filter(is_odd,ls)
-f_list=list(filter(is_odd,ls))  #還要轉成字串
-print(f_list)
-
-
-#加入lambda省略 def
-f_list=list(filter(lambda x:x % 2 ==1,ls))
-print(f_list)
-
-#模組
-#import datetime
-
+import locale
+locale.setlocale(locale.LC_CTYPE, 'chinese')
+dstr=dt.strftime('%H時')
+dstr1=dt.strftime('%m/%d %H:%M')
+print(dstr)
+print(dstr1)
